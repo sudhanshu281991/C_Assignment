@@ -1,76 +1,76 @@
 <template>
   <div class="employee-form-edit">
     <div id="overlay"></div>
-    <form id="employee-form">
-      <div class="employee-id">
-        <label>Employee ID</label>
+   <form id="employee-form">
+      <div class="employee-id form-input">
+        <label class="width33 txtleft">Employee ID <span class="required">*</span></label>
         <input
           type="text"
           v-validate="{ required: true,numeric:true }"
           name="id"
           id="id"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.id"
         />
-        <span>{{ errors.first('id') }}</span>
+        <span class="width33 required txtleft">{{ errors.first('id') }}</span>
       </div>
-      <div class="employee-name">
-        <label>Employee Name</label>
+      <div class="employee-name form-input">
+        <label class="width33 txtleft">Employee Name <span class="required">*</span></label>
         <input
           type="text"
           v-validate="{ required: true }"
           name="name"
           id="name"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.name"
         />
-        <span>{{ errors.first('name') }}</span>
+        <span class="width33 required txtleft">{{ errors.first('name') }}</span>
       </div>
-      <div class="employee-avatar">
-        <label>Employee Avatar</label>
+      <div class="employee-avatar form-input">
+        <label class="width33 txtleft">Employee Avatar</label>
         <input
           type="text"
           name="avatar"
           id="avatar"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.avatar"
         />
       </div>
-      <div class="employee-email">
-        <label>Employee Email Address</label>
+      <div class="employee-email form-input">
+        <label class="width33 txtleft">Employee Email Address <span class="required">*</span></label>
         <input
           type="text"
           v-validate="{ required: true,email:true }"
           name="email"
           id="email"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.email"
         />
-        <span>{{ errors.first('email') }}</span>
+        <span class="width33 required txtleft">{{ errors.first('email') }}</span>
       </div>
-      <div class="employee-mobile">
-        <label>Employee Mobile No</label>
+      <div class="employee-mobile form-input">
+        <label class="width33 txtleft">Employee Mobile No <span class="required">*</span></label>
         <input
           type="text"
           v-validate="{ required: true,max:10,numeric:true }"
           name="mobile"
           id="mobile"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.mobile"
         />
-        <span>{{ errors.first('mobile') }}</span>
+        <span class="width33 required txtleft">{{ errors.first('mobile') }}</span>
       </div>
-      <div class="employee-responsibility">
-        <label>Responsibility(skills,role)</label>
+      <div class="employee-responsibility form-input">
+        <label class="width33 txtleft">Responsibility(skills,role)</label>
         <textarea
           maxlength="200"
           name="responsibility"
           id="responsibility"
-          class="form-control"
+          class="form-control width33"
           v-model="employeeForm.responsibility"
         ></textarea>
       </div>
-      <button @click.prevent="submitDetails()">Submit Details</button>
+      <button class="submit-button" @click.prevent="submitDetails()">SUBMIT DETAILS</button>
     </form>
   </div>
 </template>
@@ -121,7 +121,8 @@ export default {
     width: 40%;
     background: white;
     z-index: 99999;
-    position: absolute;
+    position: fixed;
+    top:10%;
     left: 33%;
     padding: 30px;
 
